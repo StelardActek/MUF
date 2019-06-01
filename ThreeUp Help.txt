@@ -1,0 +1,171 @@
+ThreeUp.muf Help
+----------------
+
+Syntax: 'THELP <topic>'
+
+Available topics:
+
+      AIM         - Aim of the game
+      TURN        - Using your turn
+      SPECIAL     - Special Cards
+      BURNING     - Burning the Stack
+      COMMANDS    - Game Commands
+
+
+Aim of the game
+---------------
+
+When the game begins, each player will be dealt a three sets of cards. Some facing down, some facing up, and some in 'paw' (hand). As you might guess, only the player knows what they have in paw, everyone knows what everyone else has facing up, and noone knows what anyone has facing down.
+The aim of the game is very, very simple. Get rid of all your cards, first.
+
+
+Using your turn
+---------------
+
+When the game begins, a card will be drawn from the top of the deck and placed down, facing upwards. Everyone sees this card, and it forms what is called the 'stack'.
+To play a card, you must either have a card of equal or greater value to the card at the top of the stack, or a special card (see Special Cards). If you have more than one card of the same value, you can play them all at once.
+After you have played your card(s), provided you did not 'burn' the stack (see Burning the Stack), you will pass the turn to the next player.
+Play all your cards in paw, and you'll pick up your upwards facing cards, finish them, and you'll pick up your downwards facing cards. Finish all of them, and you've won!
+
+Note: If there are cards left in the deck, and you have less cards in paw than you where initially dealt, you will pickup cards until you have enough in your paw again.
+
+
+Special Cards
+-------------
+
+The following cards are special:
+
+      Elites        - The equivelant of aces in normal decks, they are the
+                      highest card in the deck.
+      Duces (Two's) - Can be played regardless of the value of the card on top
+                      of the stack.
+      Burns (Ten's) - The same as Duces, except these can burn the stack.
+                      (see Burning the Stack)
+      Cosmos'       - The same as Elites, but the can also burn the stack if
+                      you wish.
+
+
+Burning the Stack
+-----------------
+
+To 'burn' the stack is to take all the cards in the stack out of play for the remainder of the game. This can be done in three ways.
+
+      1. Using Burns:
+            Placing a ten of any suit atop the stack will cause it and the
+            the stack to be 'burnt' and removed from play.
+      2. Using Cosmos:
+            Placing a Cosmos of any suit atop the stack will offer you the
+            choice of burning the stack or leaving the Cosmos atop the stack.
+      3. The Four-of-a-kind exception:
+            If all cards of the same value gather at the top of the stack, it
+            will spontaniously combust.
+
+
+Game Commands
+-------------
+
+The commands may vary depending on your setup. If these commands don't work, look around the area you are playing in, as the owner /should/ have put up a notice of the fact.
+
+Further help can be brought up on each command:
+
+      TSHUFFLE     TJOIN        TBEGIN       TSTATUS      TPLAY        TPICKUP
+      TDRAW        TFOLD        TKICK        TEND         TSETUP       TPUB
+      TPRIV        THELP
+
+
+TSHUFFLE
+--------
+
+This command is used to initialise the game, and announce that one is starting. Should be run by one player, once.
+
+
+TJOIN
+-----
+
+Type this to join a game.
+
+
+TBEGIN
+------
+
+Used by the 'dealer' (the one who typed SHUFFLE) to begin the game when everyone has joined.
+
+
+TSTATUS
+-------
+
+Shows various information about the game (Your cards, number of cards in stack and deck etc).
+STATUS #FULL will tell you what cards you and your opponents have facing upwards.
+
+TPLAY
+-----
+
+Used to play one or more cards. The syntax is 'PLAY <card value> <card suit(s)>'.
+For example:
+
+'TPLAY 4 BLJ'      Play 4 of Blade, 4 of Lovers and 4 of Jewels.
+
+'TPLAY 10 S'       Play 10 of Staves.
+
+'TPLAY E J'
+      or          Play Elite of Jewels.
+'TPLAY ELITE J' 
+
+
+TPICK/TPICKUP
+-------------
+
+Picks up the stack and adds it to your paw, passing the turn to the next player. Use only if you can't play a card.
+
+
+TDRAW
+-----
+
+Used to draw one card from the deck and add it to your paw. You can draw as many cards from the deck as the minimum number of cards in paw, per turn.
+
+
+TFOLD
+-----
+
+You'll quit the game. You cards are placed to one side and not used for the rest of the game.
+
+
+TKICK
+-----
+
+Used by the dealer to kick an roudy or sleeping player from the game. Essentially forces them to fold.
+Syntax: 'TKICK <name>'
+
+
+TEND
+----
+
+Used by the dealer to end the game.
+
+
+TSETUP
+------
+
+Customises the number of cards to be dealt. Must be used before starting a game.
+
+'TSETUP X Y Z'     Will set X for cards down, Y for cards up, and Z for cards in paw.
+'TSETUP #P X'      Will set cards up for X number of players.
+'TSETUP #C'        Will reset defaults (generally 3 up, 3 down, 3 in paw).
+
+
+TPUB
+----
+
+Sets the game public. All in the room will hear game messages.
+
+
+TPRIV
+-----
+
+Sets the game private. Only players will hear game messages.
+
+
+THELP
+-----
+
+This help system, dummy! ;)

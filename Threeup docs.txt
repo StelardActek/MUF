@@ -1,0 +1,28 @@
+ThreeUp.muf - User's Manual
+---------------------------
+ 
+Author: Stelard Actek
+Author email: stelardactek@bigpond.com
+              (Please send comments, constructive criticism and problem reports for this program)
+Version: 1.7b
+Requires: M2SL flags
+          .confirm definition
+          .split definition
+          .tell definition
+          lib/reflist
+          lib/strings
+          Players! ;)
+ 
+Description:
+ 
+ThreeUp is a card game I learnt during my first year at college and is the only game of cards I exhibit any aptitude at and enjoy. This program will basically allow you to set up a virtual deck of cards on a muck and play. It only simulates the actual game. If you want money or items of clothing to change paws depending on the outcome of the game, you'll have to do it yourself. I'm not going to change this, because I only wrote the program because you can't role play a card game.
+ 
+How to install:
+1. Make a program called ThreeUp.muf and copy the program code into it.
+2. Set the program to M2, S and L.
+3. Create an object. Call it 'Deck of cards' or somesuch.
+4. Create an action of the object with the name 'tshuffle;tjoin;tend;tstatus;tbegin;tplay;tpick;tpickup;tdraw;tfold;tkick;tsetup;tpub;tpriv'
+5. Link that action to this program.
+6. Play!
+ 
+Good luck, and enjoy!

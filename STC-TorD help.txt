@@ -1,0 +1,294 @@
+~&120+----------------------+
+~&120|  ~&130STC-TorD.muf v1.8F  ~&120|
+~&120|    ~&170[:<- ~&110BETA ~&170->:]    ~&120| \\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+~&120|   ~&130by ~&150Stelard Actek   ~&120|  >~&110Stel~&120Tech~&140Cor~&130, MUFfing on request since ~&1701999~&120<
+~&120|    ~&130of ~&110Stel~&120Tech~&140Cor    ~&120| /____________________________________________\\
+~&120+----------------------+                            (...~&170or something~&120...)
+
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+Quick help:
+ 
+      Q [<player>]|[<player>=]<question>
+            Asks a player a question.
+      A [<answer>]
+            Answers a question
+      D [<player>]|[<player>=]<question>
+            Gives a player a dare.
+      AOK [<message>]
+            Declares an answer acceptable and passes the question on.
+      DOK <player>
+            Declares a dare complete.
+      TIMER <minutes>=<message>
+            Sets a timer with a message.
+      PICK
+            Selects a player at random and directs the question to them.
+      HISTORY
+            Shows who's had a go most recently.
+      SPIN
+            Selects a player at random, and does nothing.
+      GRAB
+            Makes it your turn to ask a question. Use sparingly.
+      RESET
+            Clears the history list, dares, questions and answers.
+      RESTART
+            Clears the dares, questions and answers, and picks a new player
+            to ask a question.
+      STATUS
+            Shows the current game status.
+      ISWEEP <player>
+            Sweeps an idle player.
+      BOOT <player>
+            Holds a vote to boot a player from the game.
+ 
+How to play on page one of the help (Q #HELP)
+
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+How to play Truth or Dare:
+ 
+The aim of Truth or Dare is to embarrass those around you without getting
+embarrassed yourself. This is done through the artful use of questions or by
+the application of humiliating dares.
+ 
+If the game room is empty, you'll have to RESET and RESTART the game first, the
+latter of which will select a player to go first for you. If the room is not
+empty, just sit down and wait for your turn.
+ 
+Once it's your turn, you may use the Q command to ask a question of one of the
+other players. You should use PICK to select a target, or check the HISTORY and
+manually select someone who's not been asked yet or recently.
+ 
+They should answer using the A command. If the answer fits your question, use
+AOK to acknowledge their answer, and it will be their turn to ask someone. If
+they answer with a request for a dare, use the D command to give them one, and
+then use AOK, so that the game may continue whilst they perform your dare.
+ 
+That's it! There are other commands that you may find useful, so read the rest
+of the documentation too. (Q #HELP2)
+Alternatively, view the quick listing of available commands. (Q #QUICK)
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+Since the disappearance of the Palace of the Dragons, and the establishment
+of Genetically Altered Perceptions, I've missed the Truth or Dare of old, and
+the muck commands that went with it. This is my attempt at emulating said
+commands, with only my memories and no knowledge of the old source code.
+Apparently the old system was programmed using MPI, where as here I'm using
+Multiple User Forth, since I find it easier to comprehend.
+ 
+Q                         Ah, now if this isn't the most important command,
+Q <player>              - I don't know what is. Q allows you to do multiple
+Q [<player>=]<question>   things. On it's own, Q will display the last
+                          question to be asked, who asked it and of whom.
+                          It can also be given a question, or a player to ask
+                          that question of. So you can select a victim with Q,
+                          then ask the question, do it the other way around,
+                          or do both at once with by putting them together with
+                          an equals sign. Note also that Q is smart enough to
+                          pick names out of questions, hence, if you where to
+                          ask such a mundane question as:
+                              "What's the colour of my eyes, Ques?"
+                          and there is a player called Ques in the room, then
+                          you don't have to specify the player name. You can
+                          only ask a question if you have 'the Q'. < ^.^ >
+A [<answer>]            - Type this to properly respond to a question you have
+                          been asked. Or, type A on it's own to find what the
+                          last answer was.
+ 
+More information on page three (Q #HELP3).
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+D <player>              - Dares are the main reason we play, aren't they? So
+  [<player>=]<dare>       this command is one you'll love to use. It functions
+                          almost exactly like Q, even down to the point of
+                          picking the target out of a sentence. However, the
+                          main difference is that you can dare someone to do
+                          something at any time, although convention dictates
+                          you should only give a dare when asked for one. There
+                          can be multiple dares running at any one time, but
+                          you can only give dares to furs who don't already
+                          have one.
+AOK [<message>]         - Accepts the answer given by whoever has been
+                          questioned. Anyone can accept an answer, though it
+                          should really only be done by the questioner.
+                          This has been left open, for situations where the
+                          original questioner has idled or disconnected.
+                          You can supply an optional message, which will be
+                          said, unless prefixed with a colon (':'), which will
+                          cause the message to be posed.
+DOK <player>            - Fries somefur's brain! Don't type this! < ^.^ >
+                          Seriously, in case you can't guess, this is the
+                          command for accepting dares. Since there can be more
+                          than one dare running at a time, you must specify a
+                          fur to release from their agony. Once again, anyone
+                          can accept a dare.
+TIMER <minutes>=<msg>   - Sets a timer, with a message, to go off in the
+                          future. The message appears exactly once, after the
+                          specified number of minutes have elapsed.
+ 
+More information on page four (Q #HELP4).
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+PICK                    - Randomly selects someone to ask a question of from
+                          the room, and sets them up for a question. This
+                          means that after running this command, you only have
+                          to type Q <question>, rather than designating a
+                          target first. Please note that PICK makes no
+                          distinction between the fur who you got the Q off of,
+                          and that poor little kitty that's been sitting in the
+                          corner waiting for a go for the last 30 consecutive
+                          questions.
+HISTORY                 - Lists the names of all in the room, and how long it's
+                          been, in questions answered, since they last had a
+                          chance to ask a question.
+SPIN                    - Picks a fur at random, but does nothing. Handy for
+                          those 'do this to someone' dares.
+GRAB                    - Grab the Q. Simple as that. Has a 99.999% chance of
+                          seriously miffing others if used without due cause.
+RESET                   - Clears the history list and the last questions and
+                          answers. Can be used at any time by anyone.
+RESTART                 - Clears the dares, questions and answers, and picks
+                          a new fur to ask a question, but leaves the history
+                          list alone. As above for running.
+STATUS                  - Shows the last question, who asked it and of whom,
+                          and any dares currently running.
+ 
+More information on page five (Q #HELP5).
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+ISWEEP <player>         - For those who don't know, there exists on most MUCKs
+                          a 'sweep' command, that basically gets rid of players
+                          who have fallen asleep away from home. Since most
+                          areas set up for Truth or Dare will have a limit on
+                          the number of players allowed in that room, this
+                          command will kick the designated player out and send
+                          them home, if they are idle enough.
+BOOT <player>           - An unfortunately necessary command, this will put up
+                          an anonymous vote to boot the designated player from
+                          the game. 75% of the players in the room need to
+                          agree. Please only use on rude and unruly players.
+<ANYCOMMAND> #REMIND ?? - This turns the controversial reminder code on or off,
+                          depending on what you replaces ?? with. #REMIND YES
+                          or #REMIND ON will turn it on, anything else will
+                          turn it off. Like BOOT, you need a 75% consensus to
+                          change this setting.
+<ANYCOMMAND> #QUICK     - Quick listing of commands and uses.
+<ANYCOMMAND> #HELP      - Unleashes the Shadow. That BAAAD thing. Run and hide.
+ 
+Version history on page six (Q #HELP6).
+Contact information on page seven (Q #HELP7).
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+v1.0  - * Original release.
+        * Had all the basics, including Q, A, AOK, D, DOK, SPIN, PICK, HISTORY,
+          GRAB, RESTART and RESET. Help wasn't too helpful.
+ 
+v1.1  - * Some small changes and bug fixes. I forget.
+ 
+v1.2b - * Added a rather dodgey timer.
+        * Added a quick command listing.
+        * Added helpful help.
+        * Added the STATUS command.
+        * Fixed some small bugs.
+ 
+v1.3b - * Moved to FuzzBall 6! This version and all following it will only run
+          on FuzzBall 6 or higher.
+        * Changed the timer somewhat. Still didn't like it.
+        * Used the new FuzzBall 6 primitives to tidy up the code somewhat.
+        * Added colour.
+ 
+v1.4b - * Decided the colour scheme looked stupid, and changed it.
+        * Fixed some small bugs.
+ 
+v1.5F - * Added the infamous Reminder Code!
+        * Added rudimentary BOOT and ISWEEP functions.
+        * Decided I wouldn't be able to improve the game anymore until I got an
+          M3 bit (*snort*!), and declared Final Release.
+ 
+v1.6F - * Got my furry rear kicked. Fixed the Reminder Code so it wouldn't
+          follow people out of the game. Oopsie.
+ 
+v1.7F - * Fixed a timing issue with the Reminder Code, and made it
+          differentiate between players who have the Q and have done nothing,
+          and players who have chosen a questionee, but not asked a question
+          yet.
+        * Added this version history.
+ 
+v1.8F - * Added the ability to toggle off the Reminder Code, since some people
+          seemed inordinately annoyed with it, whilst others seemed to like it.
+        * Vowed to never declare Final Release ever again.
+ 
+Contact information on page seven (Q #HELP7).
+ 
+
++----------------------+
+|  STC-TorD.muf v1.8F  |
+|   >-*-< M2HL >-*-<   | \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
+|   by Stelard Actek   |  >StelTechCor, MUFfing on request since 1999<
+|    of StelTechCor    | /____________________________________________\
++----------------------+                            (...or something...)
+ 
+      Questions? Problems? Suggestions? Ideas?
+ 
+      If so, contact your nearest StelTechCor office by mailing Stelard on
+      FurryMUCK, or by emailing stelardactek@bigpond.com.
+ 
+      For error reports, please tell what error you got, where you where, what
+      you typed to get the error, the date and approximate time. It would also
+      help to tell who owns the place you where, and how to get there.
+ 
+      Thank you for your time.
+                             _____  _________   _____
+                            / ___/ /___  ___/  / ___/
+                           / /__      / /     / /
+                          /__  /     / /     / /
+                         ___/ /     / /     / /___
+                        /____/ tel /_/ ech /_____/ or
+ 
